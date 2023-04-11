@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colmar</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            border:1px solid grey;
+        }
+
+        /* NAVBAR */
+        .navbar-desktop {
+            height: 64px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0px 24px;
+        }
+
+        #navbar-mobile {
+            display: none;
+        }
+
+        #colbar-logo {
+            display: flex;
+            color: grey;
+        }
+
+        #colbar-logo h1 {
+            font-weight: lighter;
+        }
+
+        #colbar-logo strong {
+            color: black;
+
+        }
+
+        .nav-link ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-link ul li {
+            padding: 0px 16px;
+            cursor: pointer;
+        }
+
+        #navbar-mobile ul {
+            display: flex;
+            height: 64px;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #navbar-mobile ul li {
+            display: inline-block;
+        }
+
+        /* main section  */
+        #section {
+            background-color: lightgrey;
+        }
+
+        .container {
+            display: flex;
+            /* width: 100%; */
+            justify-content: space-between;
+            align-items: center;
+            padding: 32px 24px 32px 24px;
+
+        }
+
+        .box1 {
+            width: 60%;
+        }
+
+        .box1 img {
+            width: 100%;
+        }
+
+        .box2 {
+            width: 40%;
+            /* align-items: center; */
+            margin-left: 48px;
+
+        }
+
+        .box2 h2 {
+            width: 100%;
+            font-size: 35px;
+            color: #4a4a4a;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .box2 p {
+            width: 100%;
+            font-size: 15px;
+            font-weight: bold;
+            color: #4a4a4a;
+            margin-bottom: 25px;
+
+        }
+
+        .box2 button {
+            width: 70%;
+            background-color: #4a4a4a;
+            color: white;
+            border: 1px solid #4a4a4a;
+            padding: 8px 0px;
+        }
+        .box2 button:hover {
+            width: 70%;
+            background-color:black;
+            color: white;
+        }
+
+        #section2 {
+            width: 100%;
+        }
+
+        .container-desktop {
+            display: flex;
+            margin: 24px;
+        }
+
+        .box3 {
+            width: 60%;
+        }
+
+        .box3 img {
+            width: 100%;
+            margin-bottom: 32px;
+            align-items: center;
+
+        }
+
+        .box3 h2 {
+            width: 100%;
+            font-size: 35px;
+            color: #4a4a4a;
+            margin-bottom: 24px;
+            font-weight: bold;
+        }
+
+        .box3 p {
+            width: 100%;
+            font-size: 15px;
+            font-weight: bold;
+            color: #4a4a4a;
+            margin-bottom: 25px;
+        }
+
+        .box4 {
+            border-left: 1px solid grey;
+            width: 36%;
+            display: flex;
+            flex-direction: column;
+            margin: 0px 24px;
+
+        }
+
+        .card {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 16px 16px;
+            /* height: auto; */
+        }
+
+        .card img {
+            width: 35%;
+            height: auto;
+        }
+
+        .card-text {
+            width: 65%;
+            color: #4a4a4a;
+            margin: 24px;
+
+        }
+
+        .card-text *{
+            margin-bottom: 8px;
+            text-decoration: none;
+        }
+
+
+        .container-mobile {
+            display: none;
+        }
+
+        #courses {
+            background-color: lightgrey;
+            padding: 32px 72px;
+        }
+
+        .courses-desktop {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 32px 32px;
+            padding: 10px;
+        }
+
+        .course-card {
+            background-color: aliceblue;
+        }
+
+        .course-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .course-card-text {
+            padding: 1rem;
+        }
+
+        .course-card-text * {
+            margin-bottom: 8px;
+        }
+
+        .course-mobile {
+            display: none;
+        }
+
+        #courses  .course-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        #courses .course-list h3 {
+            font-size: 1.5rem;
+            padding: 5px 8px;
+            color: aliceblue;
+            margin: 10px;
+            background-color: #4a4a4a;
+        }
+        #thesis{
+            background-color:white;
+            padding: 25px 10px;
+        }
+        #thesis h2{
+            /* background-color:white; */
+        }
+        .box1 video{
+            width:100%;
+            margin-bottom: 24px;
+        }
+        .box1 h4,p{
+            margin-bottom: 8px;
+        }
+        .container2{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 24px;
+        }
+        .navbar ul li{
+            padding-left:10px ;
+        }
+        .navbar ul{
+         display: flex;
+         list-style: none;
+         
+        }
+        /* for resposiveness */
+        @media only screen and (max-width:700px){
+            .navbar-desktop{
+                display: none;
+            }
+            #navbar-mobile{
+                display: block;
+            }
+            #section .container{
+                flex-direction:column;
+                padding: 0px;
+            }
+            #section .container .box1{
+                width: 100%;
+                margin: 10px;
+            }
+            #section .container .box2{
+                width: 100%;
+                margin-left: 10px;
+                text-align: center;
+            }
+            #section .container .box2 button{
+                margin-bottom: 10px;
+            }
+            #section2 .container-desktop{
+                flex-direction:column;
+                padding: 0px;
+            }
+            #section2 .container-desktop .box3,.box4{
+               width: 100%;
+               margin: 10px;
+            }
+           .courses-desktop{
+            display: none;
+           }
+           .course-mobile{
+            display: block;
+           }
+           #courses{
+            background-color: aliceblue;
+           }
+           /* .course-list h3{
+            text-align: center;
+           } */
+           #thesis .container-desktop{
+            display: none;
+           }
+           #thesis .container-mobile{
+            display: block;
+           }
+           #thesis .container-mobile video{
+            width: 100%;
+            padding: 0%;
+           }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="navbar-desktop">
+                <div id="colbar-logo">
+                    <img src="ic-logo.svg" alt="logo">
+                    <h1><strong>COLBAR</strong>ACADEMY</h1>
+                </div>
+                <div class="nav-link">
+                    <ul>
+                        <li>On campus</li>
+                        <li>Online or companies</li>
+                        <li>Sign in</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="navbar-mobile">
+                <ul>
+                    <li><img src="ic-logo.svg" alt="image used"></li>
+                    <li><img src="ic-on-campus.svg" alt="image used"></li>
+                    <li><img src="ic-online.svg" alt="image used"></li>
+                    <li><img src="ic-login.svg" alt="image used"></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="section">
+            <div class="container">
+                <div class="box1">
+                    <img src="banner.jpg" alt="banner">
+                </div>
+                <div class="box2">
+                    <h2>Learn something <br>
+                        new everyday</h2>
+                    <p>Lorem ipsum dolor sit amet consect <br>
+                        etur adipisicing elit. Illo, voluptate?</p>
+                    <button>Start here</button>
+                </div>
+            </div>
+        </section>
+        <section id="section2">
+            <div class="container-desktop">
+                <div class="box3">
+                    <img src="information-main.jpg" alt="picture">
+                    <h2>It doesn't hurt to keep practicing</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br>
+                        Veniam ratione doloribus quaerat numquam tenetur fuga provident <br>
+                        doloremquia minima facilis nobis pariatur a perferendis corrupti <br>
+                    </p><br>
+                    <p>Emanuel,Sr Strategist at Hiring.com</p>
+                </div>
+                <div class="box4">
+                    <div class="card" style="border-bottom:1px solid grey; margin-bottom:1px;"><img
+                            src="information-orientation-mobile.jpg" alt="picture">
+                        <div class=" card-text">
+                            <h4>Orientation date</h4>
+                            <p>Tue 10/11 & Wed 10/12: 8am-3pm</p>
+                            <a href="#">Read more</a>
+                        </div>
+                    </div>
+                    <div class="card" style="border-top: 1px solid grey;"><img src="information-campus-mobile.jpg"
+                            alt="picture">
+                        <div class="card-text">
+                            <h4>Our campus</h4>
+                            <p>Tue 10/11 & Wed 10/12: 8am-3pm</p>
+                            <a href="#">Read more</a>
+                        </div>
+                    </div>
+                    <div class="card" style="background-color: grey;"><img src="information-guest-lecture-mobile.jpg"
+                            alt="picture">
+                        <div class="card-text">
+                            <h4>Our guest lecture</h4>
+                            <p>Tue 10/11 & Wed 10/12: 8am-3pm</p>
+                            <a href="#">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-mobile">
+                <card></card>
+            </div>
+        </section>
+        <section id="courses">
+            <h2 style="text-align:center;margin-bottom: 32px;">Start Learning</h2>
+            <div class="courses-desktop">
+                <div class="course-card">
+                    <img src="course-software.jpg" alt="course">
+                    <div class="course-card-text">
+                        <h1>Software engineering</h1>
+                        <p>Courses</p>
+                        <p>Web developement,Mobile <br>Dvelopment,iOT,ApIs</p>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <img src="course-computer-art.jpg" alt="">
+                    <div class="course-card-text">
+                        <h1>Computer art</h1>
+                        <p>Courses</p>
+                        <p>Web developement,Mobile <br>Dvelopment,iOT,ApIs</p>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <img src="course-design.jpg" alt="">
+                    <div class="course-card-text">
+                        <h1>Design</h1>
+                        <p>Courses</p>
+                        <p>Web developement,Mobile <br>Dvelopment,iOT,ApIs</p>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <img src="course-data.jpg" alt="">
+                    <div class="course-card-text">
+                        <h1>Data</h1>
+                        <p>Courses</p>
+                        <p>Web developement,Mobile <br>Dvelopment,iOT,ApIs</p>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <img src="course-business.jpg" alt="">
+                    <div class="course-card-text">
+                        <h1>Buissness</h1>
+                        <p>Courses</p>
+                        <p>Web developement,Mobile <br>Dvelopment,iOT,ApIs</p>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <img src="course-marketing.jpg" alt="">
+                    <div class="course-card-text">
+                        <h1>Marketing</h1>
+                        <p>Courses</p>
+                        <p>Web developement,Mobile <br>Dvelopment,iOT,ApIs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="course-mobile">
+                <div class="course-list">
+                    <h3>Software engineering</h3>
+                    <h3>Computer art</h3>
+                    <h3>Design</h3>
+                    <h3>Data</h3>
+                    <h3>Buissness</h3>
+                    <h3>Marketing</h3>
+                </div>
+            </div>
+        </section>
+        <section id="thesis">
+            <h2 style="text-align: center; color: #4a4a4a; margin-bottom: 25px;">Thesis exhibit</h2>
+            <div class="container-desktop">
+                <div class="box1">
+                    <video src="thesis.mp4" controls></video>
+                    <h4>Reimagine urban</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea rem <br>
+                         veritatis placeat accusamus. Estiure velit explicabo alias sap <br>
+                         iente molestias mollitia ut doloribus et distinctio.</p>
+                </div>
+                <div class="box2">
+                    <div class="card" style="background-color:lightgrey">
+                   <img src="thesis-fisma.jpg" alt="">
+                   <div class="card-text"><p>Lorem ipsum dolor sit amet <br>
+                     consectetur adipisicing elit. Aspernatur, saepe!</p></div>
+                    </div>
+                    <div class="card">
+                        <img src="thesis-now-and-then.jpg" alt="">
+                        <div class="card-text"><p>Lorem ipsum dolor sit, <br> 
+                        amet consectetur adipisicing elit. Corrupti, omnis!</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-mobile">
+                <video src="thesis.mp4" controls></video>
+            </div>
+        </section>
+    </main>
+    <hr>
+    <footer>
+     <div class="container2">
+    <div class="nav">
+        <p >@ 2016 Colmar Academy . All rights reserved</p>
+    </div>
+    <div class="navbar" >
+        <ul >
+            <li>Term</li>
+            <li>Privacy</li>
+        </ul>
+    </div> 
+     </div>
+    </footer>
+</body>
+
+</html>
